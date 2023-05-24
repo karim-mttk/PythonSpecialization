@@ -1,3 +1,5 @@
+##contains all the code for the Iterating Files part
+
 #problem 1:
 with open("school_prompt2.txt", "r") as file:
     text = file.read()

@@ -42,3 +42,37 @@ for i in s:
     if i in vowels:
         num_vowels+=1
 #print(num_vowels)
+
+#problem 6
+hrs = input("Enter Hours:")
+h = float(hrs)
+rate = input("Enter Rate per hour:")
+rh = float(rate)
+
+if h > 40:
+    exh = h - 40
+    h = 40
+else:
+    exh = 0
+
+tot = float((h * rh) + (exh * rh * 1.50))
+
+print(tot)
+
+#problem 7
+try:
+    score = float(input("Enter Score: "))
+
+    if score >= 0.9 and score <=100:
+        print('A')
+    elif score >= 0.8:
+        print('B')
+    elif score >= 0.7:
+        print('C')
+    elif score >= 0.6:
+        print('D')
+    else:
+        print('F')
+
+except ValueError:
+    print('Invalid input')

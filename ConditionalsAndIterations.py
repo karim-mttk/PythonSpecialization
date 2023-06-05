@@ -90,3 +90,20 @@ r=float(input('Enter rate:'))
 
 p = computepay(h, r)
 print("Pay", p)
+
+#problem 9:
+largest = None
+smallest = None
+lst = []
+while True:
+    try:
+        num = input("Enter a number: ")
+        if num == "done":
+            break
+        lst.append(int(num))
+    except ValueError:
+        print('Invalid input')
+
+lst.sort()
+print("Maximum is", max(lst))
+print("Minimum is", min(lst))

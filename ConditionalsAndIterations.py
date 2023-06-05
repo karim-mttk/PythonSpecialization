@@ -76,3 +76,17 @@ try:
 
 except ValueError:
     print('Invalid input')
+
+#problem 8
+def computepay(h, r):
+    if h > 40:
+        x = h - 40
+        h = 40
+        return float((h*r) + (x*r*1.5))
+    return float(h*r)
+
+h=float(input('Enter hrs:'))
+r=float(input('Enter rate:'))
+
+p = computepay(h, r)
+print("Pay", p)

@@ -43,3 +43,70 @@ for i in nums:
 avg = round((s / n), 16)
 
 print('Average spam confidence:', avg)
+
+#problem 4:
+fname = input("Enter file name: ")
+fh = open(fname)
+lst = list()
+temp = list()
+for line in fh:
+    line.rstrip()
+    temp = line.split()
+
+    for i in temp:
+        if i not in lst:
+            lst.append(i)
+
+lst.sort()
+print(lst)
+
+
+#problem 5:
+fname = input("Enter file name: ")
+if len(fname) < 1:
+    fname = "mbox-short.txt"
+
+fh = open(fname)
+count = 0
+temp = []
+lst = []
+
+for line in fh:
+    if line.startswith('From:'):
+        temp = line.split()
+        email = temp[1]
+        #if email not in lst:
+        lst.append(email)
+        count += 1
+
+for email in lst:
+    print(email)
+
+print("There were", count, "lines in the file with From as the first word")
+
+#problem 6:
+fname = input("Enter file name: ")
+if len(fname) < 1:
+    fname = "mbox-short.txt"
+
+fh = open(fname)
+count = 0
+temp = []
+lst = []
+
+for line in fh:
+    if line.startswith('From '):
+        temp = line.split()
+        email = temp[1]
+        lst.append(email)
+
+counts = {}
+for item in lst:
+    counts[item] = lst.count(item)
+
+maxValue = max(counts.values())
+
+for k, v in counts.items():
+    if v == maxValue:
+        print(k, v)
+

@@ -76,3 +76,23 @@ class BankAccount():
 t1 = BankAccount('Bob', 100)
 print(t1)
 
+#problem 7:
+class Grass_Pokemon(Pokemon):
+    attack = 15
+    defense = 14
+    health = 12
+    p_type = "Grass"
+    attack_boost = 10
+
+
+
+#problem 8:
+def opponent(self):
+    if self.p_type == 'Grass':
+        return ('Fire', 'Water')
+    if self.p_type == 'Ghost':
+        return ('Dark', 'Psychic')
+    if self.p_type == 'Fire':
+        return ('Water', 'Grass')
+    if self.p_type == 'Flying':
+        return ('Electric', 'Fighting')

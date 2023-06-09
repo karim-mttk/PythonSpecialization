@@ -110,3 +110,27 @@ for k, v in counts.items():
     if v == maxValue:
         print(k, v)
 
+#problem 7:
+name = input("Enter file:")
+if len(name) < 1:
+    name = "mbox-short.txt"
+fh = open(name)
+
+lst = []
+hrs = []
+for line in fh:
+    if line.startswith('From '):
+        lst = line.split()
+        lst = lst[5]
+        hrs.append(lst[:2])
+
+hrs.sort()
+dhrs = {}
+
+for item in hrs:
+    dhrs[item] = hrs.count(item)
+
+for k, v in dhrs.items():
+    print(f"{int(k):02d}", v)
+
+

@@ -1,3 +1,4 @@
+'''
 #problem 1:
 class Point:
     """ Point class for representing and manipulating x,y coordinates. """
@@ -96,3 +97,10 @@ def opponent(self):
         return ('Water', 'Grass')
     if self.p_type == 'Flying':
         return ('Electric', 'Fighting')
+
+'''
+
+#problem 9:
+x = 'jello'
+print(dir(x))
+

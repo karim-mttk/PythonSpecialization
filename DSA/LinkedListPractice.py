@@ -30,8 +30,15 @@ class LinkedList(object):
         """Get an element from a particular position.
         Assume the first position is "1".
         Return "None" if position is not in the list."""
-
-
+        count = 1
+        current = self.head
+        if position < 1:
+            return None
+        while current and count <= position:
+            if count == position:
+                return current
+            current = current.next
+            count += 1
         return None
 
     def insert(self, new_element, position):
@@ -39,12 +46,36 @@ class LinkedList(object):
         Assume the first position is "1".
         Inserting at position 3 means between
         the 2nd and 3rd elements."""
-        pass
+        if position < 1:
+            return None
+        if position == 1:
+            new_element.next = self.head
+            self.head = new_element
+            return
+
+        count = 1
+        current = self.head
+        while current and count < position:
+            if count == position - 1:
+                new_element.next = current.next
+                current.next = new_element
+                return
+            current = current.next
+            count += 1
 
     def delete(self, value):
         """Delete the first node with a given value."""
-        pass
-
+        current = self.head
+        prev = None
+        while current:
+            if current.value == value:
+                if prev:
+                    prev.next = current.next
+                else:
+                    self.head = current.next
+                break
+            previous = current
+            current = current.next
 
 # Test cases
 # Set up some Elements

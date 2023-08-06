@@ -67,4 +67,5 @@ class Maze():
         for i in range(self.height):
             for j in range(self.width):
                 if self.grid[i][j] not in ["A", "B", " ", "#"]:
+                    pass
 

@@ -1,7 +1,7 @@
 import sqlite3
 import re
 
-conn = sqlite3.connect('organizationdb.sqlite')
+conn = sqlite3.connect('../Database/organizationdb.sqlite')
 cur = conn.cursor()
 cur.execute('DROP TABLE IF EXISTS Counts')
 cur.execute('CREATE TABLE Counts (org TEXT, count INTEGER)')

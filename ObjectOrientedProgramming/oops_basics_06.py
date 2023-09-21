@@ -18,6 +18,13 @@ class Car:
         def stop_the_engine():
             self.engine_running = False
 
+        """__del__ method is called is managed by Python's garbage 
+        collector and may vary depending 
+        on the Python implementation and system specifics."""
+        #destructor
+        def __del__(self):
+            print(f"{self.make} {self.model} Destructor Invoked!")
+
 def main():
     print("The main() method")
     car1 = Car()
@@ -44,6 +51,12 @@ def main():
     #overwriting the attributes of Car class
     Car.no_of_tries = 25
     print("car1:", car1.no_of_tries)
+
+    #delete objects
+    print("Objects Deleted".center(50, "-"))
+    del car1
+    del car2
+    del car2
 
 if __name__ == '__main__':
     main()

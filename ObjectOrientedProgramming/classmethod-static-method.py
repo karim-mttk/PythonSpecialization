@@ -20,6 +20,17 @@ class Book:
         self.book_type = book_type
         self.weight = weight
 
+    def __repr__(self):
+        return f"<Book: {self.name}, type: {self.book_type}, weight: {self.weight}grams>"
+
+    @classmethod
+    def hardcover(cls, name, page_weight):
+        return cls(name, cls.TYPES[0], page_weight+100)
+
+    @classmethod
+    def paperback(cls, name, page_weight):
+        return cls(name, cls.TYPES[1], page_weight)
+
 
 """
 test = ClassTest()
@@ -34,5 +45,11 @@ ClassTest.class_method()
 ClassTest.static_method()
 """
 
-book1 = Book("Harry Potter", "hardcover", 1200)
-print(book1.name)
+# book1 = Book("Harry Potter", "hardcover", 1200)
+# print(book1.name)
+
+book2 = Book.hardcover("Jason Bourne", 900)
+book3 = Book.paperback("Goosebumps", 300)
+print(book2)
+print(book3)
+
